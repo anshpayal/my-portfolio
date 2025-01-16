@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Experience from "@/components/Experience";
 import Project from "@/components/Project";
 
 export default function HomePage() {
@@ -8,7 +9,10 @@ export default function HomePage() {
       <About />
 
       {/* Project Section */}
-      <Project/>
+      <Project />
+      
+      {/* Experience Section */}
+      <Experience/>
     </div>
   );
 }
