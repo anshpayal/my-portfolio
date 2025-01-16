@@ -1,42 +1,35 @@
 import Image from "next/image";
+import MyProfilePhoto from "../../public/profile-photo.jpeg";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { FaSquareXTwitter, FaSquareGithub } from "react-icons/fa6";
 
 export default function About() {
   return (
-    <section className="flex flex-col md:flex-row justify-between items-center my-16">
-      <div>
-        <h1 className="text-4xl font-bold">Ansh Payal</h1>
-        <h2 className="text-lg text-zinc-400">
-          Experienced Frontend Developer
+    <section className="flex flex-col-reverse md:flex-row md:justify-between md:items-center md:my-16">
+      <div className="md:w-8/12">
+        <h1 className="text-4xl font-bold pb-1">Ansh Payal</h1>
+        <h2 className="font-light text-zinc-400">
+          Experienced Frontend Developer skilled in building products with
+          Next.js, React, Tailwind CSS, API integrations, web performance
+          optimization, and more.
         </h2>
-        <div className="flex space-x-4 mt-4">
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            className="hover:underline"
-          >
-            Twitter
+        <div className="flex space-x-3 mt-4">
+          <a href="https://twitter.com" target="_blank">
+            <FaSquareXTwitter size={24} />
           </a>
-          <a
-            href="https://github.com"
-            target="_blank"
-            className="hover:underline"
-          >
-            GitHub
+          <a href="https://github.com/anshpayal" target="_blank">
+            <FaSquareGithub size={24} />
           </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            className="hover:underline"
-          >
-            LinkedIn
+          <a href="https://linkedin.com/anshpayal" target="_blank">
+            <IoLogoLinkedin size={24} />
           </a>
         </div>
       </div>
-      {/* <Image
-          src={null} // Replace with your photo
-          alt="Ansh Payal"
-          className="w-32 h-32 rounded-full border-2 border-gray-500 mt-8 md:mt-0"
-        /> */}
+      <Image
+        src={MyProfilePhoto}
+        alt="Ansh Payal"
+        className="w-32 h-32 rounded-xl mb-6 md:mb-0"
+      />
     </section>
   );
 }

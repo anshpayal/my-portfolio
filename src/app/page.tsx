@@ -1,6 +1,7 @@
 import About from "@/components/About";
-import Experience from "@/components/Experience";
-import Project from "@/components/Project";
+// import ContactForm from "@/components/ContactForm";
+// import Experience from "@/components/Experience";
+// import Project from "@/components/Project";
 
 export default function HomePage() {
   return (
@@ -9,10 +10,13 @@ export default function HomePage() {
       <About />
 
       {/* Project Section */}
-      <Project />
+      {/* <Project /> */}
       
       {/* Experience Section */}
-      <Experience/>
+      {/* <Experience /> */}
+      
+      {/* Contact form */}
+      {/* <ContactForm/> */}
     </div>
   );
 }
