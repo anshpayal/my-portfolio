@@ -1,25 +1,48 @@
-'use client'
-import { useState } from "react";
+"use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { MdSunny } from "react-icons/md";
+import { IoMoon } from "react-icons/io5";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState("");
+
+  useEffect(() => {
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+    setTheme(systemTheme);
+    document.documentElement.classList.add(systemTheme);
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+
+    document.documentElement.classList.remove(theme);
+    document.documentElement.classList.add(newTheme);
+  };
+
   return (
     <header className="p-4 border-b border-gray-700">
       <nav className="flex justify-between items-center max-w-3xl mx-auto md:px-4">
-        {/* Logo */}
-        <div className="text-sm font-semibold">
-          <Link href="/">My Portfolio</Link>
-        </div>
+        {/* Dark/Light Mode Toggle */}
+        <button
+          onClick={toggleTheme}
+          className="p-2 rounded bg-zinc-700 text-white text-sm"
+        >
+          {theme === "light" ? (<IoMoon size={18}/>) : (<MdSunny size={18} fill="yellow"/>)}
+        </button>
 
         {/* Desktop Navbar */}
-        <div className="hidden md:flex space-x-6 text-sm">
+        <div className="hidden md:flex space-x-6 text-sm text-black dark:text-white">
           <Link href="/" className="hover:underline">
             Home
           </Link>
@@ -35,7 +58,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Navbar */}
-        <div className="flex items-center md:hidden space-x-4 text-sm">
+        <div className="flex items-center md:hidden space-x-4 text-sm text-black dark:text-white">
           {/* Home Link */}
           <Link href="/" className="hover:underline">
             Home
@@ -45,7 +68,7 @@ export default function Header() {
             Blogs
           </Link>
           {/* Hamburger Button */}
-          <button onClick={toggleMenu} className="p-2 rounded bg-zinc-700">
+          <button onClick={toggleMenu} className="p-2 rounded bg-zinc-700 text-white">
             <RxHamburgerMenu size={18} />
           </button>
         </div>

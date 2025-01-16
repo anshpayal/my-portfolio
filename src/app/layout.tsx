@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-zinc-900 text-white">
+      <body className="dark:bg-zinc-900 text-white">
         <Header />
         <main className="max-w-3xl mx-auto mt-8 px-4">{children}</main>
         <Footer />
