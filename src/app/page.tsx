@@ -1,6 +1,6 @@
 import About from "@/components/About";
 import Project from "@/components/Project";
-// import ContactForm from "@/components/ContactForm";
+import ContactForm from "@/components/ContactForm";
 // import Experience from "@/components/Experience";
 
 
@@ -17,7 +17,7 @@ export default function HomePage() {
       {/* <Experience /> */}
       
       {/* Contact form */}
-      {/* <ContactForm/> */}
+      <ContactForm/>
     </div>
   );
 }
