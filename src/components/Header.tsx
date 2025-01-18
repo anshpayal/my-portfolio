@@ -7,16 +7,15 @@ import { IoMoon } from "react-icons/io5";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState("");
-
-  useEffect(() => {
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches
+  const [theme, setTheme] = useState(() => {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
-    setTheme(systemTheme);
-    document.documentElement.classList.add(systemTheme);
-  }, []);
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.add(theme);
+  }, [theme]);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -38,7 +37,11 @@ export default function Header() {
           onClick={toggleTheme}
           className="p-2 rounded bg-zinc-700 text-white text-sm"
         >
-          {theme === "light" ? (<IoMoon size={18}/>) : (<MdSunny size={18} fill="yellow"/>)}
+          {theme === "light" ? (
+            <IoMoon size={18} />
+          ) : (
+            <MdSunny size={18} fill="yellow" />
+          )}
         </button>
 
         {/* Desktop Navbar */}
@@ -68,7 +71,10 @@ export default function Header() {
             Blogs
           </Link>
           {/* Hamburger Button */}
-          <button onClick={toggleMenu} className="p-2 rounded bg-zinc-700 text-white">
+          <button
+            onClick={toggleMenu}
+            className="p-2 rounded bg-zinc-700 text-white"
+          >
             <RxHamburgerMenu size={18} />
           </button>
         </div>
