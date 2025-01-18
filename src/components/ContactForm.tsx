@@ -12,9 +12,9 @@ export default function ContactForm() {
     e.preventDefault();
     setLoading(true);
 
-    const serviceId = "service_ktve4on";
-    const templateId = "template_dtdz8jn";
-    const userId = "MEpac_OkndeTQ27hI";
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
     const templateParams = {
       user_email: email,
@@ -61,13 +61,13 @@ export default function ContactForm() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-4 py-2 rounded-l-lg dark:bg-zinc-700 bg-gray-200 text-white"
+              className="flex-1 px-4 py-2 rounded-l-lg dark:bg-zinc-700 bg-gray-200 text-white focus:outline-none"
               placeholder="youremail@example.com"
               required
             />
             <button
               type="submit"
-              className="px-6 py-2 bg-blue-500 text-white font-bold rounded-r-lg hover:bg-blue-600"
+              className="px-6 py-2 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600"
               disabled={loading}
             >
               {loading ? "Sending..." : "Send"}
