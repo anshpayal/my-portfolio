@@ -52,9 +52,9 @@ export default function Header() {
           <Link href="#projects" className="hover:underline">
             Projects
           </Link>
-          <Link href="/blogs" className="hover:underline">
+          {/* <Link href="/blogs" className="hover:underline">
             Blogs
-          </Link>
+          </Link> */}
           <Link href="#contact" className="hover:underline">
             Contact
           </Link>
