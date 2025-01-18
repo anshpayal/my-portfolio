@@ -6,11 +6,13 @@ import Link from "next/link";
 import Modal from "./Modal";
 import { ProjectType, projects } from "@/data/constant";
 import { FaLink } from "react-icons/fa6";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function Project() {
   const [selectedProject, setSelectedProject] = useState<ProjectType | null>(
     null
   );
+  const [visibleProjects, setVisibleProjects] = useState(4); // Tracks how many projects to show
 
   const openModal = (project: ProjectType) => {
     setSelectedProject(project);
@@ -20,13 +22,17 @@ export default function Project() {
     setSelectedProject(null);
   };
 
+  const handleSeeMore = () => {
+    setVisibleProjects((prev) => prev + 4); // Load 4 more projects
+  };
+
   return (
     <section id="projects" className="my-16">
       <h2 className="text-4xl font-semibold mb-8 text-zinc-700 dark:text-white">
         Projects
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project, index) => (
+        {projects.slice(0, visibleProjects).map((project, index) => (
           <div
             key={index}
             className="border border-gray-400 dark:border-gray-700 rounded-xl overflow-hidden group"
@@ -76,6 +82,18 @@ export default function Project() {
           </div>
         ))}
       </div>
+
+      {projects.length > visibleProjects && (
+        <div className="flex justify-center items-center mt-8">
+          <button
+            onClick={handleSeeMore}
+            className="text-sm text-zinc-900 dark:text-white flex items-center gap-1 hover:underline"
+          >
+            See More
+            <MdKeyboardArrowDown size={18} />
+          </button>
+        </div>
+      )}
 
       <Modal project={selectedProject} onClose={closeModal} />
     </section>
