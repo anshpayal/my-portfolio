@@ -3,25 +3,35 @@ import Project from "@/components/Project";
 import ContactForm from "@/components/ContactForm";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
-
+import ScrollAnimation from "@/components/ScrollAnimation";
 
 export default function HomePage() {
   return (
     <div>
       {/* About Me Section */}
-      <About />
+      <ScrollAnimation>
+        <About />
+      </ScrollAnimation>
 
       {/* Project Section */}
-      <Project />
+      <ScrollAnimation>
+        <Project />
+      </ScrollAnimation>
 
       {/* Skills Section */}
-      <Skills />
+      <ScrollAnimation>
+        <Skills />
+      </ScrollAnimation>
 
       {/* Experience Section */}
-      <Experience />
+      <ScrollAnimation>
+        <Experience />
+      </ScrollAnimation>
 
       {/* Contact form */}
-      <ContactForm />
+      <ScrollAnimation>
+        <ContactForm />
+      </ScrollAnimation>
     </div>
   );
 }
