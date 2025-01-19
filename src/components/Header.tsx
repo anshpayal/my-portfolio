@@ -7,13 +7,22 @@ import { IoMoon } from "react-icons/io5";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(() => {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  });
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
+    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+    setTheme(preferredTheme);
+    document.documentElement.classList.add(preferredTheme);
+  }, []);
+
+  useEffect(() => {
+    // Update the document's class when the theme changes
+    document.documentElement.classList.remove(
+      theme === "dark" ? "light" : "dark"
+    );
     document.documentElement.classList.add(theme);
   }, [theme]);
 
@@ -24,9 +33,6 @@ export default function Header() {
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-
-    document.documentElement.classList.remove(theme);
-    document.documentElement.classList.add(newTheme);
   };
 
   return (
@@ -67,9 +73,9 @@ export default function Header() {
             Home
           </Link>
           {/* Blogs Link */}
-          <Link href="/blogs" className="hover:underline">
+          {/* <Link href="/blogs" className="hover:underline">
             Blogs
-          </Link>
+          </Link> */}
           {/* Hamburger Button */}
           <button
             onClick={toggleMenu}
