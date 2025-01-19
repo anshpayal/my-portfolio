@@ -37,6 +37,7 @@ export type ExperienceType = {
   description?: string;
   icon?: StaticImageData;
 }
+
 export const projects: ProjectType[] = [
     {
       title: "Crowdsec",
@@ -127,38 +128,52 @@ export const about: AboutType = {
 };
 
 export const experience: ExperienceType[] = [
-{
+  {
     role: "Frontend Developer",
-  type:"Full-time",
-      company: "Codalent",
-      duration: "Aug 2024 - Present",
-      description:
-        "I have extensive experience in building robust web applications and platforms using modern frameworks like Next.js and React. I developed the KrakenD Playground, an interactive API gateway demo platform, and the CrowdSec website, integrating WordPress as a headless CMS with GraphQL. My work includes implementing advanced features like real-time chat with WebSocket, dynamic component rendering systems, and Algolia-powered search functionality. Additionally, I created an IP verification feature leveraging CrowdSec’s public API, ensuring reliability with rate-limiting mechanisms.",
-      icon: CodalentIcon,
-    },
-    {
-      role: "Frontend Developer",
-      type:"Full-time",
-      company: "Harman Connected Service",
-      duration: "March 2022 - July 2023",
-      description:
-        "I contributed to the development of an internal video conferencing web app, focusing on building user-friendly UI components and features using React.js. I implemented intuitive video call controls, optimized room creation and management with Context API, and developed a call analytics dashboard using Recharts to provide insights into usage patterns and call durations. My work enhanced the app's functionality and user experience.",
-    },
-    {
-      role: "SDE (Frontend Developer)",
-      type:"Internship",
-      company: "Foxmula",
-      duration: "May 2021 - July 2021",
-      description:
-        "Worked with the team to complete the assignments, learn new methodologies of software and frontend development. Later, task was provided to create a dashboard of their project called Menrva (Kind of Student portal).",
-      icon: FoxmulaIcon,
-    },
-    {
-      role: "Bachelor's of Technology (Computer Science)",
-      type:"Full-time",
-      company: "UPES, Dehradun",
-      duration: "June 2018 - May 2022",
-      description: "",
-      icon: CollegeIcon,
-    },
-  ]
+    type: "Full-time",
+    company: "Codalent",
+    duration: "Aug 2024 - Present",
+    description:
+      "I have extensive experience in building robust web applications and platforms using modern frameworks like Next.js and React. I developed the KrakenD Playground, an interactive API gateway demo platform, and the CrowdSec website, integrating WordPress as a headless CMS with GraphQL. My work includes implementing advanced features like real-time chat with WebSocket, dynamic component rendering systems, and Algolia-powered search functionality. Additionally, I created an IP verification feature leveraging CrowdSec’s public API, ensuring reliability with rate-limiting mechanisms.",
+    icon: CodalentIcon,
+  },
+  {
+    role: "Frontend Developer",
+    type: "Full-time",
+    company: "Harman Connected Service",
+    duration: "March 2022 - July 2023",
+    description:
+      "I contributed to the development of an internal video conferencing web app, focusing on building user-friendly UI components and features using React.js. I implemented intuitive video call controls, optimized room creation and management with Context API, and developed a call analytics dashboard using Recharts to provide insights into usage patterns and call durations. My work enhanced the app's functionality and user experience.",
+  },
+  {
+    role: "SDE (Frontend Developer)",
+    type: "Internship",
+    company: "Foxmula",
+    duration: "May 2021 - July 2021",
+    description:
+      "Worked with the team to complete the assignments, learn new methodologies of software and frontend development. Later, task was provided to create a dashboard of their project called Menrva (Kind of Student portal).",
+    icon: FoxmulaIcon,
+  },
+  {
+    role: "Bachelor's of Technology (Computer Science)",
+    type: "Full-time",
+    company: "UPES, Dehradun",
+    duration: "June 2018 - May 2022",
+    description: "",
+    icon: CollegeIcon,
+  },
+];
+
+export const skills = [
+  "React/Next.js",
+  "JavaScript",
+  "TypeScript",
+  "Tailwind CSS",
+  "Redux Toolkit",
+  "RESTFul API",
+  "GraphQL",
+  "Supabase",
+  "Firebase",
+  "Git/Github",
+  "Performance Optimization",
+];
