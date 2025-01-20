@@ -12,9 +12,11 @@ export default function ContactForm() {
     e.preventDefault();
     setLoading(true);
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+    const serviceId =
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "defaultServiceId";
+    const templateId =
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "defaultTemplateId";
+    const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID || "defaultUserId";
 
     const templateParams = {
       user_email: email,
