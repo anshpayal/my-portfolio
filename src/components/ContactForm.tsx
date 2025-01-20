@@ -54,7 +54,7 @@ export default function ContactForm() {
         </a>
         <form onSubmit={handleEmailSubmit}>
           <label className="block text-sm mb-2 text-zinc-700 dark:text-white">
-            Drop your message and let&apos;s discuss about your project.
+            Drop in your email ID and I will get back to you.
           </label>
           <div className="flex items-center">
             <input
