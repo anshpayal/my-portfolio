@@ -3,8 +3,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Ansh Payal - Portfolio",
-  description: "Portfolio of Ansh Payal, Frontend Developer",
+  title: "Ansh Payal - Frontend Developer",
+  description:
+    "I've been developing web app for 2 years straight. Get in touch with me to know more",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
