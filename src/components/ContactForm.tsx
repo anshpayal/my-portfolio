@@ -58,18 +58,18 @@ export default function ContactForm() {
           <label className="block text-sm mb-2 text-zinc-700 dark:text-white">
             Drop in your email ID and I will get back to you.
           </label>
-          <div className="flex items-center">
+          <div className="flex items-center flex-wrap md:flex-nowrap">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-4 py-2 rounded-l-lg dark:bg-zinc-700 bg-gray-200 text-white focus:outline-none"
+              className="flex-1 px-4 py-2 rounded md:rounded-l-lg dark:bg-zinc-700 bg-gray-200 text-white focus:outline-none"
               placeholder="youremail@example.com"
               required
             />
             <button
               type="submit"
-              className="px-6 py-2 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600"
+              className="px-6 py-2 bg-blue-500 text-white rounded md:rounded-r-lg hover:bg-blue-600"
               disabled={loading}
             >
               {loading ? "Sending..." : "Send"}

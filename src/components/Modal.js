@@ -13,7 +13,7 @@ export default function Modal({ project, onClose }) {
       className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-6"
       onClick={onClose}
     >
-      <div className="bg-white dark:bg-zinc-800 rounded-xl shadow-lg max-h-screen max-w-lg md:max-w-3xl w-full p-6 relative animate-fade-in overflow-scroll" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-white dark:bg-zinc-800 rounded-xl shadow-lg max-h-full max-w-lg md:max-w-3xl w-full p-6 relative animate-fade-in overflow-scroll" onClick={(e) => e.stopPropagation()}>
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-700 dark:text-gray-300"
