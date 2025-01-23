@@ -113,6 +113,13 @@ export const projects: ProjectType[] = [
     image: SnipurlImage,
     url: "https://snipurl.co/",
     tag: "Personal Project",
+    codeUrl: "https://github.com/anshpayal/SnipURL",
+    contribution: [
+      "<b>Full-Stack Development: </b></br>Designed and developed SnipURL, a complete URL shortening web application using React.js, Supabase, Tailwind CSS, and Shadcn UI.",
+      "<b>Authentication and Security: </b></br>Implemented robust user authentication, including login and signup functionality with form validation via Supabase and secured user sessions using Context API and protected routes for enhanced security.",
+      "<b>User Dashboard: </b></br>Built a dynamic dashboard for managing shortened URLs, including features for filtering, deleting, and generating QR codes for convenient sharing.",
+      "<b>Analytics and Insights: </b></br>Added an analytics page to provide users with actionable insights, including: Total Clicks, Location metrics and Device analytics",
+    ],
   },
 ];
 
@@ -167,7 +174,8 @@ export const experience: ExperienceType[] = [
 ];
 
 export const skills = [
-  "React/Next.js",
+  "Next.js",
+  "React",
   "JavaScript",
   "TypeScript",
   "Tailwind CSS",
