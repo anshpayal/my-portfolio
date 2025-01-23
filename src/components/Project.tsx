@@ -7,12 +7,13 @@ import Modal from "./Modal";
 import { ProjectType, projects } from "@/data/constant";
 import { FaLink } from "react-icons/fa6";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { FaCaretRight } from "react-icons/fa";
 
 export default function Project() {
   const [selectedProject, setSelectedProject] = useState<ProjectType | null>(
     null
   );
-  const [visibleProjects, setVisibleProjects] = useState(4); // Tracks how many projects to show
+  const [visibleProjects, setVisibleProjects] = useState(4);
 
   const openModal = (project: ProjectType) => {
     setSelectedProject(project);
@@ -23,7 +24,7 @@ export default function Project() {
   };
 
   const handleSeeMore = () => {
-    setVisibleProjects((prev) => prev + 4); // Load 4 more projects
+    setVisibleProjects((prev) => prev + 4);
   };
 
   return (
@@ -45,30 +46,41 @@ export default function Project() {
               height={192}
             />
 
-            <div className="px-4">
+            <div className="px-4 pb-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-medium mb-2 text-zinc-700 dark:text-white flex items-center gap-2">
                   {project.title}
-                  <Link href={project.url} target="_blank">
+                </h3>
+                <div className="flex items-center gap-3">
+                  <p className="text-xs bg-zinc-700 mb-2 dark:text-white rounded px-2 py-1">
+                    {project.tag}
+                  </p>
+                  <Link
+                    href={project.url}
+                    target="_blank"
+                    className="mb-2 text-white bg-blue-500 px-3 py-1 rounded-md hover:bg-blue-600 transition text-xs"
+                  >
                     <FaLink size={16} />
                   </Link>
-                </h3>
-                <p className="text-sm bg-zinc-700 mb-2 dark:text-white rounded px-2">
-                  {project.tag}
-                </p>
+                </div>
               </div>
               <p className="text-zinc-600 dark:text-zinc-400 font-light mb-2">
                 {project.description}
               </p>
+
               {project.contribution && (
                 <button
                   onClick={() => openModal(project)}
-                  className="text-sm text-blue-500 hover:underline"
+                  className="flex items-center text-sm text-blue-500 hover:underline"
                 >
-                  Read about my contribution
+                  <FaCaretRight/>
+                  {project.tag === "Personal Project"
+                    ? "Read more about project"
+                    : "Read about my contribution"}
                 </button>
               )}
-              <div className="flex flex-wrap gap-3 mt-4 mb-4">
+
+              <div className="flex flex-wrap gap-3 mt-4">
                 {project.techStack.map((tech, i) => (
                   <span
                     key={i}
