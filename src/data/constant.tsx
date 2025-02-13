@@ -57,6 +57,7 @@ export const projects: ProjectType[] = [
     tag: "Full-time",
     contribution: [
       "<b>Website Development: </b><br/>Created the CrowdSec website using Next.js and TypeScript, integrating WordPress as a headless CMS through GraphQL APIs for seamless content management.",
+      "<b>Automated Unused Image Detection: </b><br/>Developed a utility script to identify dead/unused images in the src/ directory. Integrated it into a GitHub workflow to enforce cleanup by checking for unused images during pull requests.",
       "<b>Dynamic Component Rendering System: </b><br/>Build a scalable React-based system supporting 18+ layout variations. This reduced client development time for new pages by 80%.",
       "<b>Enhanced Blog Search: </b><br/>Implemented search and filtering functionality using Algolia Search, significantly improving the user search experience.",
       "<b>IP Verification Feature: </b><br/>Integrated CrowdSec’s public API to allow users to verify and request removal from community blocklists. Added rate-limiting fallbacks to ensure reliability during API disruptions.",
