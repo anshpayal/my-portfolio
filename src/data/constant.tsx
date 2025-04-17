@@ -112,7 +112,7 @@ export const projects: ProjectType[] = [
       "SnipURL is a URL shortening tool built with ReactJS and Supabase. Easily shorten long URLs and track their analytics for better link management.",
     techStack: ["React", "Javascript", "Tailwind CSS", "Supabase", "Shadcn"],
     image: SnipurlImage,
-    url: "https://snipurl.co/",
+    url: "https://snip-url-one.vercel.app/",
     tag: "Personal Project",
     codeUrl: "https://github.com/anshpayal/SnipURL",
     contribution: [
