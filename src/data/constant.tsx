@@ -131,7 +131,7 @@ export const about: AboutType = {
     "Frontend Developer with 2+ years of experience specializing in " +
     "<b class='text-zinc-800 dark:text-zinc-300'>Next.js, React, Tailwind CSS, API integrations, Web performance optimization</b>, and more. Delivering high-quality, efficient web applications.",
   socialLinks: {
-    linkedin: "https://linkedin.com/anshpayal",
+    linkedin: "https://www.linkedin.com/in/anshpayal/",
     github: "https://github.com/anshpayal",
     twitter: "https://twitter.com/anshpayal18",
   },
